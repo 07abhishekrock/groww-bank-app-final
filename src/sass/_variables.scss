@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+$main_font : 'Rubik' , sans-serif;
+$primary_color : #1CACFE;
+$black_gray_color : #595959;
+$light_primary_color : #DEF3FF;
+$super_light_gray_color : #f4f4f4;
+$dark_gray_color : #787070;
+$light_gray_color : #C6C6C6;
+$light_red_color : #ffcccb;
+$box_shadow : 0px 0px 20px 5px rgba(0,0,0,0.05);
+
+@mixin flex($align:center , $justify:center){
+    display:flex;
+    align-items:$align;
+    justify-content:$justify;
+}

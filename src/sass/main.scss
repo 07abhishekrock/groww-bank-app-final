@@ -1,0 +1,34 @@
+@use './variables' as variables;
+@use './navbar' as navbar;
+@use './misc' as misc;
+@use './bankItem' as bankItem;
+
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+code {
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*{
+    box-sizing:border-box;
+    font-family:variables.$main_font;
+}
+
+button , a , input{
+    border:0px solid black;
+    background-color:white;
+    border-radius:0px;
+    font-family:inherit;
+    color:inherit;
+    text-decoration:none;
+    outline:none;
+}

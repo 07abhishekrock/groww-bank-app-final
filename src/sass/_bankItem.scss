@@ -1,0 +1,124 @@
+@use './variables' as variables;
+
+div.bank-item-list{
+    margin:0 auto;
+    margin-top:3em;
+    width:90%;
+    max-width:700px;
+    &[loading="1"]{
+        opacity:0.5;
+        pointer-events:none;
+    }
+}
+
+div.bank-item{
+    margin-bottom:2em;
+    border:2px solid black;
+    border-radius:0.3em;
+    padding:1em;
+    width:100%;
+    text-transform:uppercase;
+    @media only screen and (max-width:900px){
+        font-size:0.9em;
+    }
+    @media only screen and (max-width:900px){
+        &>i{
+            text-align:center;
+            display:block;
+        }
+    }
+    &>i{
+        font-style:normal;
+        color:variables.$light_gray_color;
+        font-weight:550;
+    }
+    &>div.bottom-wrapper{
+        @include variables.flex(center , space-between);
+        @media only screen and (max-width:500px){
+            flex-flow:column;
+            margin-top:2em;
+            text-align:center;
+            
+            &>div.address-with-label{
+                width:90%;
+                &>span{
+                    display:block;
+                    width:100%;
+                    color:black!important;
+                    border:0px solid black;
+                    border-top:2px solid black;
+                    border-bottom:2px solid black;
+                    background-color:white!important;
+                }
+            }
+        }
+        &>div.address-with-label{
+            width:70%;
+            &>span{
+                background-color:black;
+                color:white;
+                padding:0.3em;
+                font-size:0.8em;
+                font-weight:500;
+                border-radius:0.3em;
+            }
+            &>p{
+                margin:0.8em 0px;
+                font-size:1.1em;
+                letter-spacing: 0.03em;
+            }
+        }
+        &>button{
+            font-weight:500;
+            font-size:0.95em;
+            color:gray;
+            border:2px solid currentColor;
+            padding:0.3em;
+            border-radius:0.2em;
+            cursor:pointer;
+            &:hover{
+                color:black;
+            }
+            &[favourite="1"]{
+                color:variables.$primary_color;
+                background-color:variables.$light_primary_color;
+            }
+        }
+    }
+    &>div.bank-name-info-wrapper{
+        @include variables.flex(center , space-between);
+        @media screen and (max-width:500px) {
+            flex-flow:column; 
+            &>div.bank-name-info{
+                width:95%!important;
+                &>h2{
+                    width:100%;
+                    margin-bottom:1em;
+                }
+            }
+        }
+        &>div.bank-name-info{
+            font-size:1.1em;
+            width:60%;
+            &>h2{
+                margin:0.3em 0px;
+                margin-top:0.5em;
+                font-weight:550;
+            }
+            &>h4{
+                font-weight:550;
+                margin:0.3em 0px;
+                margin-top:0.5em;
+                margin-bottom:1.5em;
+                color:variables.$black_gray_color;
+            }
+        }
+    }
+}
+
+div.single-bank-item{
+    text-align:center;
+    font-size:clamp(0.8em , 1em , 1.1em);
+    width:90%;
+    margin: 2em auto;
+}

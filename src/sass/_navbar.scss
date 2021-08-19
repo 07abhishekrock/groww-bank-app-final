@@ -1,0 +1,111 @@
+@use './variables' as variables;
+
+div.navbar-wrapper{
+    padding:1em 1.5em;
+    font-size:1.3em;
+
+    @media only screen and (max-width:900px){
+        padding:1em 0px;
+    }
+    &>div.navbar-search-container{
+        @include variables.flex(center,space-between);
+        padding-bottom:0.8em;
+        margin-bottom:0.5em;
+        border-bottom:2px solid #f1f1f1;
+        @media only screen and (max-width:900px){
+            flex-flow:column!important;
+            &>div.navbar-logo{
+                margin-bottom:1em;
+            }
+            &>div.navbar-search{
+                font-size:0.8em;
+            }
+        }
+        &>div.navbar-logo{
+            @include variables.flex();
+            font-size:1.1em;
+            font-weight:500;
+            &>svg{
+                font-size:1.3em;
+                margin-right:0.4em;
+                color:variables.$primary_color;
+            }
+        }
+        &>div.navbar-search{
+            @include variables.flex(center , flex-start);
+            padding:0.3em 0.8em;
+            padding-left:0.3em;
+            background-color:variables.$super_light_gray_color;
+            border-radius:2em;
+            width:95%;
+            max-width:500px;
+            height:2.5em;
+            &>input{
+                background-color:transparent;
+                flex-grow:1;
+                padding:0.3em 0.5em;
+                font-size:0.9em;
+            }
+            &>div{
+                @include variables.flex();
+                cursor:pointer;
+                user-select: none;
+                transition:all 0.3s ease-in;
+                height:100%;
+                padding:0.3em 0.7em;
+                background-color:variables.$black_gray_color;
+                color:white;
+                border-radius:2em;
+                &>svg{
+                    margin-right:0.5em;
+                    font-size:0.6em;
+                }
+                &>span{
+                    &>i{
+                        font-size:0.6em;
+                        font-style:normal;
+                        display:block;
+                    }
+                    font-size:0.75em;
+                    font-weight:500;
+                }
+            }
+        }
+    }
+    &>div.navbar-city-dropdown-wrapper{
+        @include variables.flex(center , flex-end);
+        font-weight:450;
+        user-select:none;
+        margin-bottom:0.5em;
+        &>span{
+            font-size:0.8em;
+            margin-right:1em;
+        }
+        @media only screen and (max-width:900px){
+            justify-content: center;
+            margin:0.5em 0px;
+            margin-bottom:2em;
+        }
+    }
+    &>div.navbar-nav-options{
+        @media only screen and (max-width:500px){
+            font-size:0.9em;
+        }
+        width:fit-content;
+        margin:0 auto;
+        margin-top:1.5em;
+        border-radius:2em;
+        background-color:variables.$super_light_gray_color;
+        font-weight:450;
+        &>a{
+            background-color:transparent;
+            border-radius:inherit;
+            padding:0.3em 0.8em;
+            display:inline-block;
+            &[select="1"]{
+                background-color:variables.$primary_color;
+                color:white;
+            }
+        }
+    }
+}
